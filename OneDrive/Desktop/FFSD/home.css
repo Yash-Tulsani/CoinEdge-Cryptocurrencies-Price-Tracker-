@@ -141,6 +141,11 @@ right: 60px;
     text-shadow: 0 0 25px rgb(39, 39, 39);
 }
 
+/* #logo1{
+    width: 250px;
+    height: 120px;
+} */
+
 .navitem {
   list-style: none;
   z-index: 100;
@@ -323,7 +328,7 @@ transition-timing-function: linear;
     color: aliceblue;
     display: flex;
     align-items: center;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 #social{
