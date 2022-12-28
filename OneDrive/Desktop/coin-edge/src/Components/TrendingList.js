@@ -3,7 +3,7 @@ import React, { useState,useEffect } from 'react'
 import AliceCarousel from 'react-alice-carousel';
 import { Link } from 'react-router-dom';
 import { TrendingCoins } from '../Config/api';
-import { CurrencyState } from '../Context/CurrenyContext'
+import { CurrencyState } from '../Context/CryptoContext'
 import TrendingListItem from './TrendingListItem';
 
 
@@ -16,16 +16,9 @@ export default function TrendingList() {
       setTrendingCoins(data);
     }
     useEffect(() => {
-      return () => {
-        fetchTrendingList()
-      }
-    }, [])
-    useEffect(() => {
-      return () => {
-        fetchTrendingList()
-      }
-      
+     fetchTrendingList()
     }, [currency])
+    
 
     const responsive={
       0:{

@@ -2,7 +2,7 @@ import { LinearProgress, Table, TableBody, TableCell, TableContainer, TableHead,
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import "../App.css"
-import { SymbolState } from '../Context/CurrenyContext'
+import { SymbolState } from '../Context/CryptoContext'
 
 export default function CoinsTable(props) {
     const tableHeads=["Coin","Price","24h Change","Market Cap"]
@@ -16,8 +16,8 @@ export default function CoinsTable(props) {
             <Table >
                 <TableHead sx={{backgroundColor:"#EEBC1D"}}>
                     <TableRow>
-                        {tableHeads.map((head)=>{
-                            return <TableCell align={head=="Coin"?"left":"center"} sx={{color:"black",fontFamily:" 'Montserrat', sans-serif",fontWeight:"800",fontSize:"1.3vmax"}}>
+                        {tableHeads.map((head,idx)=>{
+                            return <TableCell key={idx} align={head=="Coin"?"left":"center"} sx={{color:"black",fontFamily:" 'Montserrat', sans-serif",fontWeight:"800",fontSize:"1.3vmax"}}>
                                      {head}
                                     </TableCell>
                         })}

@@ -2,15 +2,13 @@
 import './App.css';
 import { BrowserRouter,Routes,Route} from 'react-router-dom';
 import Header from './Components/Header';
-import HomePage from './Components/HomePage';
-import CoinPage from './Components/CoinPage';
-import CurrenyContext from './Context/CurrenyContext';
+import HomePage from './Pages/HomePage';
+import CoinPage from './Pages/CoinPage';
+import Alert from './Components/Alert';
 
 
 
 function App() {
-
- 
 
   return (
     <BrowserRouter>
@@ -21,6 +19,7 @@ function App() {
           <Route path="/coins/:id" element={<CoinPage/>}/>
         </Routes>
       </div>
+      <Alert/>
     </BrowserRouter>
   );
 }

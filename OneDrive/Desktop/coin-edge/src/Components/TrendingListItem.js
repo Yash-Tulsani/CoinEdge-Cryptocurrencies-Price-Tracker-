@@ -1,6 +1,6 @@
 import React from 'react'
 import "../App.css"
-import { SymbolState } from '../Context/CurrenyContext'
+import { SymbolState } from '../Context/CryptoContext'
 
 export default function TrendingListItem(props) {
     const {symbol}=SymbolState()

@@ -1,8 +1,8 @@
 import React from 'react'
 import "../App.css"
-import CoinsTableContainer from './CoinsTableContainer'
+import CoinsTableContainer from '../Components/CoinsTableContainer'
 
-import TrendingList from './TrendingList'
+import TrendingList from '../Components/TrendingList'
 
 export default function HomePage() {
   return (

@@ -1,6 +1,6 @@
 import React, { useEffect,useState} from 'react'
 import { HistoricalChart } from '../Config/api'
-import { CurrencyState } from '../Context/CurrenyContext'
+import { CurrencyState } from '../Context/CryptoContext'
 import "../App.css"
 import { CircularProgress } from '@mui/material'
 import { Line } from 'react-chartjs-2'
@@ -14,7 +14,7 @@ import {
     Tooltip,
     Legend,
   } from 'chart.js'
-  import { Chart } from 'react-chartjs-2'
+
 import DaysButton from './DaysButton'
   
   ChartJS.register(
@@ -35,12 +35,11 @@ export default function CoinChart({coin}) {
     
 
     const fetchChartData=async ()=>{
-      setChartData(null)
+        setChartData(null)
         const url=HistoricalChart(coin.id,days,currency)
         const response=await fetch(url);
         const data=await response.json();
         setChartData(data.prices);
-        console.log(data.prices)
     }
 
     // useEffect(() => {
@@ -89,16 +88,20 @@ export default function CoinChart({coin}) {
                
             }
             
-            } options={{elements:{point:{radius:1,hoverRadius:2}}}} redraw={true}></Line>
+            } options={
+              {
+                elements:{point:{radius:1,hoverRadius:2}}
+              }
+              } redraw={true} ></Line>
             <div id="daysBtnContainer">
                 {chartDays.map((day)=>{
-                    return <DaysButton label={day.label} selected={day.value===days} value={day.value}
+                    return <DaysButton key={day.value} label={day.label} selected={day.value===days} value={day.value}
                     setDays={setDays}/>
                 })}
             </div>
             </>
             
-        :<CircularProgress size={250} thickness={1} sx={{color:"gold"}}></CircularProgress>}
+        :<CircularProgress size={240} thickness={1.1} sx={{color:"gold"}}></CircularProgress>}
         
    </div>
   )

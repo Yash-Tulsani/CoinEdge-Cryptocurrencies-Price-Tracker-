@@ -2,16 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import CurrencyContext from './Context/CurrenyContext';
+
 import 'react-alice-carousel/lib/alice-carousel.css';
+import CryptoContext from './Context/CryptoContext';
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <CurrencyContext>
+    <CryptoContext>
       <App/>
-    </CurrencyContext>
+    </CryptoContext>
   </React.StrictMode>
 );
 
