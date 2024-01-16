@@ -11,9 +11,13 @@ export default function TrendingList() {
     const {currency}=CurrencyState();
     const [trendingCoins, setTrendingCoins] = useState([])
     async function fetchTrendingList(){
-      const {data}=await axios.get(TrendingCoins(currency))
-      
-      setTrendingCoins(data);
+     try{
+      const res=await axios.get(TrendingCoins(currency))
+      setTrendingCoins(res.data)
+     }
+      catch(err){
+        console.log(err)
+      }
     }
     useEffect(() => {
      fetchTrendingList()

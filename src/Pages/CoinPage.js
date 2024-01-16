@@ -25,10 +25,14 @@ export default function CoinPage() {
  
 
   const fetchCoin=async ()=>{
-    const url=SingleCoin(id);
-    const response=await fetch(url);
-    const data=await response.json();
-    setCoin(data);
+    try{
+      const res=await fetch(SingleCoin(id,currency))
+      const data=await res.json()
+      setCoin(data)
+    }
+    catch(err){
+      console.log(err)
+    }
   }
 
   useEffect(() => {

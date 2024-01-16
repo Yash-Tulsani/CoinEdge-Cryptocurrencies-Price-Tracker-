@@ -47,10 +47,14 @@ function CryptoContext(props) {
 
     const fetchCoins=async ()=>{
       setLoading(true);
-      const url=CoinList(currency);
-      const response=await fetch(url);
-      const data=await response.json();
-      setCoins(data);
+      try{
+        const res=await fetch(CoinList(currency))
+        const data=await res.json()
+        setCoins(data)    
+      }
+      catch(err){
+        console.log(err)
+      }
       setLoading(false)
     }
 

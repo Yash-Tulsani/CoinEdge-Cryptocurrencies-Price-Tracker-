@@ -37,9 +37,14 @@ export default function CoinChart({coin}) {
     const fetchChartData=async ()=>{
         setChartData(null)
         const url=HistoricalChart(coin.id,days,currency)
-        const response=await fetch(url);
-        const data=await response.json();
-        setChartData(data.prices);
+        try{
+            const res=await fetch(url)
+            const data=await res.json()
+            setChartData(data.prices)
+        }
+        catch(err){
+            console.log(err)
+        }
     }
 
     // useEffect(() => {
